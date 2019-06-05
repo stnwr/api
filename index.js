@@ -1,5 +1,6 @@
 import path from 'path'
-import { createResourceRouteOptions, generateUISchema } from './apiutils'
+import { createResourceRouteOptions } from './apiutils'
+import { generateUISchema } from '@stoneware/common/helpers/schema'
 
 export default {
   plugin: {

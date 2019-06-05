@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@stoneware/common": "file:../common",
     "boom": "^7.3.0",
     "esm": "^3.2.16",
     "objection": "^1.6.3",

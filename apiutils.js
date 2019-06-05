@@ -42,7 +42,7 @@ export function createResourceRouteOptions ({ table, Model }) {
             .query()
             .findById(id)
 
-          return result || boom.notFound(`${table.displayName} with id '${id}' was not found`)
+          return result || boom.notFound(`${table.title} with id '${id}' was not found`)
         } catch (err) {
           return boom.badRequest(err.message, err)
         }
@@ -97,21 +97,4 @@ export function createResourceRouteOptions ({ table, Model }) {
       }
     }
   ]
-}
-
-export function generateUISchema (schema) {
-  const uiSchema = {}
-  const { properties } = schema
-
-  for (let key in properties) {
-    uiSchema[key] = {
-      'ui:title': key
-    }
-
-    if (key === 'id') {
-      uiSchema[key]['ui:widget'] = 'hidden'
-    }
-  }
-
-  return uiSchema
 }
